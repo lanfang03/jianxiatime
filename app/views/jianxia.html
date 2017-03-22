@@ -1,0 +1,76 @@
+<!-- 图片轮播代码 -->
+<!-- Swiper -->
+<div class="swiper-container banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./img/1.jpg"></div>
+        <div class="swiper-slide"><img src="./img/2.jpg"></div>
+        <div class="swiper-slide"><img src="./img/3.jpg"></div>
+        <div class="swiper-slide"><img src="./img/4.jpg"></div>
+        <div class="swiper-slide"><img src="./img/5.jpg"></div>
+        <div class="swiper-slide"><img src="./img/6.jpg"></div>
+        <div class="swiper-slide"><img src="./img/7.jpg"></div>
+        <div class="swiper-slide"><img src="./img/8.jpg"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<main>
+    <div class="subject">
+        <h2><i class="glyphicon glyphicon-fire"></i>热门专题</h2>
+        <div class="more_subject">
+            <a href="javascript:;">大学生活</a>
+            <a href="javascript:;">财经</a>
+            <a href="javascript:;">体育</a>
+            <a href="javascript:;">谈谈情，说说爱</a>
+            <a href="javascript:;">美食</a>
+            <a href="javascript:;">短篇小说</a>
+            <a href="javascript:;">创业</a>
+            <a href="javascript:;">散文</a>
+            <a href="javascript:;">程序员</a>
+            <a href="javascript:;">青春</a>
+            <a href="javascript:;">诗</a>
+            <a href="javascript:;">悬疑推理</a>
+            <a href="javascript:;">婚姻育儿</a>
+        </div>
+    </div>
+    <div class="article">
+        <h2><i class="glyphicon glyphicon-leaf"></i>热门文章</h2>
+        <div class="more_article">
+            <% data.forEach(function(value,key){ %>
+            <div class="one">
+                <div class="img">
+                    <img src="/img/baby.jpg">
+                    <p><%= value.username %></p>
+                </div>
+                <div class="inf">
+                    <h3><%= value.title %></h3>
+                    <p><%= value.other %></p>
+                    <span>2017-03-15</span>
+                </div>
+            </div>
+            <% }) %>
+            <div class="one" ng-repeat="dt in list">
+                <div class="img">
+                    <img ng-src="{{dt.img}}">
+                    <p>{{dt.username}}</p>
+                </div>
+                <div class="inf">
+                    <h3>{{dt.title}}</h3>
+                    <p>{{dt.content}}</p>
+                    <span>{{dt.time}}</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </mian>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        loop: true,
+        autoplay: 1000,
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 30
+    });
+    </script>

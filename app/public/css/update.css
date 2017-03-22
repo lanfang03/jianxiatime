@@ -1,0 +1,105 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	/*background: #FCFCFC;*/
+}
+/*logo标题*/
+#content h2{
+	width: 100%;
+	height: 2.68rem;
+	/*background: tan;*/
+	margin-top: 6.31rem;
+}
+#content h2 img{
+	padding:0rem 3.2rem;
+	height: 100%;
+}
+/*表单*/
+#content form{
+	width: 20.31rem;
+	height: 12.5rem;
+	margin: 3.19rem auto 0;
+	/*border: 1px solid #DDD;*/
+}
+#content form .info{
+	width: 100%;
+	height: 5.63rem;
+	border: 1px solid #DDD; 
+	border-radius: 0.8rem;
+	clear: both;
+}
+#content form .info>div{
+	width: 100%;
+	height: 2.81rem;
+	line-height: 2.81rem;
+	border-bottom: 1px solid #DDD;
+}
+
+#content form .info div:last-child{
+	border-bottom: none;
+}
+#content form div i{
+	display: inline-block;
+	width: 1.62rem;
+	padding:0rem 0.5rem 0rem 0.88rem;
+	font-size: 1.3rem;
+	color: #969696;
+}
+#content form div input{
+	width: 60%;
+	height: 1.3rem;
+	outline: none;
+	border: 0;
+}
+#content form .btn{
+	width: 100%;
+	height: 2.81rem;
+	line-height: 2.81rem;
+	background-color: #9DD295;
+	border-radius: 0.3rem;
+	color: #FEFEFE;
+	font-size: 1.5rem;
+	border: none;
+	margin-top: 3rem;
+}
+#content .back{
+    display: block;
+    width: 20.31rem;
+    height: 2.81rem;
+    line-height: 2.81rem;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #E78170;
+    border-radius: 0.3rem;
+    color: #FEFEFE;
+    font-size: 1.5rem;
+    margin-top: 5.5rem;
+}
+
+.info div a{
+	width: 10%;
+    color: #999;
+    font-size: 0.5rem;
+    margin-right: 0.2rem;
+}
+.tx{
+	width: 100%;
+	height: 4rem;
+	margin-bottom: 1rem;
+}
+.img{
+	width: 4rem;
+	height: 4rem;
+	margin: 0 auto;
+
+	border-radius: 50%;
+	overflow: hidden;
+}
+.tx .img img{
+	width: 100%;
+	height: 100%;
+}

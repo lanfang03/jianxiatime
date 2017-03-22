@@ -1,0 +1,11 @@
+
+<form action="/write" method="post">
+	<input type="text" name="title" value="" placeholder="请输入标题---" class="write-inp">
+	<textarea cols="45" rows="25" name="other" placeholder="请输入正文---"></textarea>
+	<button type="submit" class="write-btn">发布</button>
+</form>
+<script>
+	$(function(){
+		console.log($('.write-inp').val());
+	})
+</script>

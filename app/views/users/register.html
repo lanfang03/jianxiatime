@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简夏莳光--注册</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- 引入本地样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- 字体文件样式 -->
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <!-- bootstrap小图标 -->
+    <link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="content">
+        <h2><img src="/img/logo02.jpg"></h2>
+        <form action="/users/create" method="post">
+            <div class="info">
+                <div class="username"><i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="username" value="" required placeholder="你的昵称"><span id="username_info"></span></div>
+                <div class="phone"><i class="glyphicon glyphicon-phone"></i>
+                    <input type="number" name="phone" value="" required placeholder="手机号"><span class="ok glyphicon glyphicon-ok-circle"></span><span class="remove glyphicon glyphicon-remove-circle"></span>
+                </div>
+                <div class="password"><i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" name="password" value="" required placeholder="密码"><span class="ok glyphicon glyphicon-ok-circle"></span><span class="remove glyphicon glyphicon-remove-circle"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn">注册</button>
+        </form>
+        <div class="word1">
+            <p>—— 社交账号直接登录 ——</p>
+        </div>
+        <div class="social">
+            <div class="weixin"><img src="/img/weixin.png"></div>
+            <div class="qq"><img src="/img/qq.png"></div>
+            <div class="weibo"><img src="/img/weibo.png"></div>
+        </div>
+        <div class="word2">
+            <p><a href="/users/login">已有账号登录</a><span>|</span>
+                <a href="/">随便看看</a></p>
+        </div>
+    </div>
+    <!-- 引入jquery.js文件 -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+    <!-- 引入本地js文件 -->
+    <script type="text/javascript" src="/js/reset.js"></script>
+    <script>
+        $(function(){
+        $('.phone').keyup(function(){
+            var res_phone = $.trim($('.phone').children('input').val());
+            var reg_phone = /^1[34578]\d{9}$/;
+            if(reg_phone.test(res_phone)){
+                $('.phone').find('.remove').hide();
+                $('.phone').find('.ok').show();
+                $('.btn').removeAttr('disabled');
+            }
+            if(!reg_phone.test(res_phone)){
+                $('.phone').find('.ok').hide();
+                $('.phone').find('.remove').show();
+                $('.btn').attr('disabled','disabled');
+            }
+            if(!reg_phone.test(res_phone)&&res_phone==''){
+                $('.phone').find('.ok').hide();
+                $('.phone').find('.remove').hide();
+                $('.btn').attr('disabled','disabled');
+            }
+        })
+        $('.password').keyup(function(){
+
+            var res_password = $.trim($('.password').children('input').val());
+            var reg_password = /^[a-zA-Z0-9]{6,12}$/;
+            if(reg_password.test(res_password)){
+                $('.password').find('.remove').hide();
+                $('.password').find('.ok').show();
+                $('.btn').removeAttr('disabled');
+            }
+            if(!reg_password.test(res_password)){
+                $('.password').find('.ok').hide();
+                $('.password').find('.remove').show();
+                $('.btn').attr('disabled','disabled');
+
+            }
+            if(!reg_password.test(res_password)&&res_password==''){
+                $('.password').find('.ok').hide();
+                $('.password').find('.remove').hide();
+                $('.btn').attr('disabled','disabled');
+            }
+        })
+        })
+    </script>
+</body>
+
+</html>

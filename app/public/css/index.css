@@ -1,0 +1,448 @@
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    /*background-color: #EEE;*/
+    position: relative;
+    height: 100%;
+}
+
+body {
+    /*background: #eee;*/
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    /*padding: 0;*/
+    padding-top: 3rem;
+    
+}
+/*遮罩层*/
+#shadow{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+/*页面的头部标题和侧拉列表*/
+
+#header {
+    width: 100%;
+    height: 3.3rem;
+    line-height: 3.3rem;
+    z-index: 999;
+    background-color: #EEE;
+    position: fixed;
+    top: 0;
+}
+
+#header h1 .sun {
+    font-size: 1.8rem;
+    color: #ABCDEF;
+    margin-right: 0.6rem;
+}
+
+#header h1 {
+    padding: 0 0.8rem;
+    font-size: 1.8rem;
+    float: left;
+    margin: 0.3rem auto;
+}
+
+#header .all {
+    display: block;
+    float: right;
+    font-size: 2rem;
+    margin: 0.8rem 0.5rem 0 0;
+}
+
+
+/*介入登录页面*/
+
+#page {
+    width: 79%;
+    height: 100%;
+    position: fixed;
+    background: #FFE;
+    z-index: 9999;
+    top: 0;
+    right: -80%;
+    /*display: none;*/
+}
+
+#page .logo {
+    width: 100%;
+    height: 3.3rem;
+}
+
+#page .jx img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.jx div {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.jx .login {
+    margin-top: 8rem;
+}
+
+.jx a {
+    display: block;
+    width: 80%;
+    margin: 2rem auto;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.jx .login a {
+    background: #9DD295;
+}
+
+.jx .register a {
+    background: #96C8E6;
+}
+
+#page .jx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    z-index: -99;
+}
+
+#page .exit {
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: #EEE;
+    position: absolute;
+    bottom: 0rem;
+    color: #FFF;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1rem;
+    border-top: 1px solid #DDD;
+}
+
+
+/*轮播图*/
+
+.banner {
+    margin-top: 0.5rem;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 8rem;
+}
+
+
+/*热门专题*/
+
+.subject h2 {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.subject i {
+    padding: 0.2rem;
+    color: red;
+}
+
+.more_subject a {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid #DDD;
+    color: #888;
+    border-radius: 0.5rem;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+}
+
+
+/*热门文章*/
+
+.article {
+    margin-bottom: 3rem;
+}
+
+.article h2 {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.article i {
+    padding: 0.2rem;
+    color: green;
+}
+
+.more_article {
+    /*height: 1000px;*/
+    background-color: #FFF;
+}
+
+.more_article .one {
+    width: 100%;
+    height: 6rem;
+    margin: 0.5rem 0;
+    /*background-color: hotpink;*/
+    display: flex;
+}
+
+.one .img {
+    width: 20%;
+    height: 100%;
+    /*order: 2;*/
+    /*background: tan;*/
+}
+
+.img img {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 0.3rem 0.8rem;
+}
+
+.img p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    color: #888;
+}
+
+.one .inf {
+    width: 80%;
+    height: 100%;
+    border-bottom: 1px solid #EEE;
+    /*order: 1;*/
+    /*background: pink;*/
+}
+
+.inf span {
+    font-size: 0.7rem;
+    margin-right: 1rem;
+    float: right;
+}
+
+.inf h3 {
+    margin: 0.3rem 0.5rem;
+    font-size: 1rem;
+}
+
+.inf p {
+    width: 92%;
+    height: 2.8rem;
+    text-indent: 1.2rem;
+    margin: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+    /*overflow: hidden;*/
+}
+
+
+/*write页面*/
+
+textarea {
+    margin-top: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.write-inp {
+    width: 95%;
+    border: none;
+    outline: none;
+    height: 2.8rem;
+    padding-left: 0.2rem;
+    font-size: 1.3rem;
+}
+
+.write-btn {
+    width: 100%;
+    height: 2.8rem;
+    display: block;
+    position: fixed;
+    bottom: 2.6rem;
+    background-color: #FFE;
+    color: #999;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    border: none;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+#mine-content {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#mine-content .data {
+    width: 100%;
+    height: 10rem;
+    background: url('../img/data-bg.png') no-repeat;
+    background-size: cover;
+    border-top: 1px solid #FFF;
+}
+
+#mine-content .line {
+    width: 100%;
+    height: 1.31rem;
+    border-top: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+    background-color: #FCFCFC;
+}
+
+
+/*mine页面 头像样式*/
+
+.user-img {
+    width: 4.43rem;
+    height: 4.43rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    overflow: hidden;
+    margin: 3rem 0 0 1.25rem;
+    float: left;
+}
+.data .logout{
+    color: #DD4F43;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin: 0;
+}
+.data .login{
+    color: #1CA361;
+    padding: 0.5rem;
+    margin: 0;
+}
+.user-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.data h2 {
+    float: left;
+    padding: 0 0.2rem;
+    line-height: 10rem;
+    margin: 0 0 0 0.94rem;
+}
+
+.data .icon {
+    float: right;
+    margin-right: 0.94rem;
+    font-size: 1.5rem;
+    line-height: 10rem;
+    color: #000;
+}
+
+
+/*classify分类*/
+
+.classify div {
+    width: 90%;
+    float: right;
+    height: 2.75rem;
+    border-bottom: 1px solid #D5D5D5;
+}
+
+.classify div i {
+    margin-top: 0.75rem;
+    float: left;
+    font-size: 1.3rem;
+    color: #B1B1B1;
+}
+
+.classify div p {
+    float: left;
+    margin: 0.94rem 0 0 1rem;
+    color: #2F2F2F;
+}
+
+.classify div a {
+    color: #999;
+}
+
+.classify div span {
+    float: right;
+    margin: 0.94rem 0.94rem 0 0;
+}
+
+
+/*底部导航栏*/
+
+.bottom {
+    width: 100%;
+    height: 2.5rem;
+    border-top: 1px solid #DDD;
+    background-color: #EEE;
+    position: fixed;
+    z-index: 999;
+    bottom: 0px;
+}
+
+.bottom_nav {
+    width: 80%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+
+.bottom_nav li {
+    float: left;
+    width: 33.3%;
+    text-align: center;
+}
+
+.bottom_nav li a {
+    color: #999;
+    font-size: 1rem;
+}
+
+.bottom_nav .glyphicon {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}

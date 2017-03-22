@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/*logo标题*/
+
+#content h2 {
+    width: 100%;
+    height: 2.68rem;
+    margin-top: 6.31rem;
+}
+
+#content h2 img {
+    padding: 0rem 3.2rem;
+    height: 100%;
+}
+
+
+/*表单*/
+
+#content form {
+    width: 20.31rem;
+    height: 9.69rem;
+    margin: 3.19rem auto 0;
+    /*border: 1px solid #DDD;*/
+}
+
+#content form .info {
+    width: 100%;
+    height: 5.6rem;
+    border: 1px solid #DDD;
+    border-radius: 0.8rem;
+}
+
+#content form div {
+    width: 100%;
+    height: 2.81rem;
+    line-height: 2.81rem;
+    border-bottom: 1px solid #DDD;
+}
+
+#content form div:last-child {
+    border-bottom: none;
+}
+
+#content form div i {
+    display: inline-block;
+    width: 1.62rem;
+    padding: 0rem 0.5rem 0rem 0.88rem;
+    font-size: 1.3rem;
+    color: #969696;
+}
+
+#content form div input {
+    width: 75%;
+    height: 1.3rem;
+    outline: none;
+    border: 0;
+}
+
+#content form .btn {
+    width: 100%;
+    height: 2.81rem;
+    line-height: 2.81rem;
+    background-color: #9DD295;
+    border-radius: 0.3rem;
+    color: #FEFEFE;
+    font-size: 1.5rem;
+    border: none;
+    margin-top: 1.31rem;
+}
+
+.forget {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.19rem;
+}
+
+.forget a {
+    color: #999;
+}
+
+#content .word1 {
+    color: #BBB;
+    width: 100%;
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 0.95rem;
+}
+#tip{
+    margin-top: 1rem;
+    width: 100%;
+    height: 1rem;
+    text-align: center;
+    color: #E05244;
+    font-size: 0.8rem;
+}
+#content .social {
+    width: 15rem;
+    height: 3.44rem;
+    margin: 1.5rem auto 0rem;
+}
+
+.social div {
+    width: 3.44rem;
+    height: 3.44rem;
+    float: left;
+}
+
+.social div img {
+    width: 100%;
+    height: 100%;
+}
+
+.social .qq {
+    margin: 0rem 2.34rem;
+}
+
+.word2 p {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: #999;
+}
+
+.word2 p span {
+    padding: 0rem 0.5rem;
+}
+
+.word2 p a:first-child {
+    color: #D96E5D;
+}
+
+.word2 p a:last-child {
+    color: #999;
+}

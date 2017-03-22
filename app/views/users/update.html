@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简夏莳光--修改用户信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- 引入本地样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- 字体文件样式 -->
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <!-- bootstrap小图标 -->
+    <link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="content">
+        <h2><img src="/img/logo02.jpg"></h2>
+        <form action="/users/update" method="post">
+            <div class="tx">
+                <div class="img"><img src="/img/baby.jpg"></div>
+            </div>
+            <div class="info">
+                <div class="username">
+                    <input type="hidden" name="_id" value="<%= data._id %>">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="username" value="<%= data.username %>">
+                </div>
+                <div class="phone">
+                    <i class="glyphicon glyphicon-phone"></i>
+                    <input type="number" name="phone" value="<%= data.phone %>">
+                </div>
+            </div>
+            <button type="submit" class="btn">确定提交</button>
+        </form>
+        <a href="/" class="back">返回首页</a>
+    </div>
+    <!-- 引入jquery.js文件 -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+    <!-- 引入本地js文件 -->
+    <script type="text/javascript" src="/js/reset.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

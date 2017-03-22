@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>简夏莳光</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- 引入本地样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- 引入swiper框架样式 -->
+    <link rel="stylesheet" href="/bower/swiper/dist/css/swiper.min.css">
+    <!-- 字体文件样式 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <!-- bootstrap小图标 -->
+    <link rel="stylesheet" type="text/css" href="bower/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+    <!-- 头部标题 -->
+    <header id="header">
+        <h1><i class="sun iconfont icon-qing-"></i>简夏莳光</h1>
+        <span class="all glyphicon glyphicon-menu-hamburger" id="btn"></span>
+    </header>
+    <!-- 遮罩层 -->
+    <div id="shadow"></div>
+    <!-- 介入登录页面 -->
+    <div id="page">
+        <img src="./img/logo02.jpg" class="logo">
+        <div class="jx">
+            <img src="/img/jian.jpg" class="jx">
+            <div class="login iconfont icon-denglu"><a href="/users/login">登录</a></div>
+            <div class="register iconfont icon-zhucedl"><a href="/users/register">注册</a></div>
+        </div>
+        <div class="exit iconfont icon-fanhui"></div>
+    </div>
+    <!-- 路由页面 -->
+    <div id="content" ng-view></div>
+    <!-- 页面的底部 -->
+    <nav class="bottom">
+        <ul class="bottom_nav">
+            <li>
+                <a href="#/" class="glyphicon glyphicon-home"></a>
+            </li>
+            <li><a href="#/write"><i class="glyphicon glyphicon-edit"></i></a></li>
+            <li>
+                <a href="#/mine" class="glyphicon glyphicon-user"></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 引入swiper文件 -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+    <script src="/bower/swiper/dist/js/swiper.jquery.min.js"></script>
+    <script src="/bower/swiper/dist/js/swiper.min.js"></script>
+    <!-- 引入本地js文件 -->
+    <script type="text/javascript" src="/js/reset.js"></script>
+    <!-- 引入angular，angular-route文件 -->
+    <script src="/bower/angular/angular.min.js"></script>
+    <script src="/bower/angular-route/angular-route.min.js"></script>
+    <script>
+    var app = angular.module('app', ['ngRoute']);
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: '/index',
+                controller: 'IndexCtrl'
+            })
+            .when('/write', {
+                templateUrl: '/write/:_id'
+            })
+            .when('/mine', {
+                templateUrl: '/mine'
+            })
+            .otherwise({
+                redirectTo: '/index'
+            })
+    })
+    app.controller('IndexCtrl', function($scope, $http) {
+        $http.get('./js/info.json').then(function(msg) {
+            $scope.list = msg.data;
+        })
+    })
+    $(function() {
+        var a = true;
+        $(window).scroll(function() {
+
+            var dH = $(document).height();
+            var sH = $(document).scrollTop();
+            var wH = $(window).height();
+
+            if (dH - sH - wH <= 200) {
+                if (a) {
+                    a = false;
+                    $.get('./js/info_reload.json', function(data) {
+                        console.log(data)
+                        var str = '';
+                        for (var i = 0; i < data.length; i++) {
+                            str += '<div class="one">';
+                            str += '<div class="img">';
+                            str += '<img src="' + data[i].img + '">';
+                            str += '<p>' + data[i].username + '</p>';
+                            str += '</div>';
+                            str += '<div class="inf">';
+                            str += '<h3>' + data[i].title + '</h3>';
+                            str += '<p>' + data[i].content + '</p>';
+                            str += '<span>' + data[i].time + '</span>';
+                            str += '</div>';
+                            str += '</div>';
+                        }
+                        $('.more_article').append(str);
+                    })
+                }
+            }
+        })
+
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<style>
+    #header{
+        display: none;
+    }
+    body{
+        padding-top: 0;
+    }
+
+</style>
+<div id="mine-content">
+    <div class="data">
+        <div class="user-img">
+            <img src="./img/baby.jpg">
+        </div>
+
+        <% if (admin == null) { %>
+        <h2><a href="/users/login" class="login">登录</a></h2>
+        <% }else{ %>
+        <h2><%= admin.username %><a href="/logout" class="logout">退出</a></h2>
+        <% } %>
+        <% if (admin == null) { %>
+        <% }else{ %>
+        <a href="users/update/<%= admin._id %>" class="icon glyphicon glyphicon-cog"></a>
+        <% } %>
+    </div>
+    <div class="line"></div>
+    <div class="classify">
+        <div><i class="glyphicon glyphicon-tasks"></i><p>公开文章</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-lock"></i><p>私密文章</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-bookmark"></i><p>收藏的文章</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-heart-empty"></i><p>喜欢的文章</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-th-large"></i><p>我的专题</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-book"></i><p>我的文集</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-eye-open"></i><p>夜间模式</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-time"></i><p>浏览历史</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-send"></i><p>分享文章</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <div><i class="glyphicon glyphicon-link"></i><p>分享简夏链接</p><a href="javascript:;"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+    </div>
+</div>
